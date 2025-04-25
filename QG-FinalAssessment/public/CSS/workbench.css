@@ -1,0 +1,233 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.guide-line {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100vh;
+  background-color: red;
+  display: none;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #000;
+  cursor: se-resize;
+}
+
+.resize-handle-bottom-right {
+  bottom: -5px;
+  right: -5px;
+  cursor: se-resize;
+}
+
+.resize-handle-roundness {
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: ns-resize;
+}
+
+/* 顶部导航栏样式 */
+.top-nav {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.nav-item {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.back-box {
+  background-color: #eaecef;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+/* 左侧面板样式 */
+.left-panel {
+  width: 25%;
+  height: 100vh;
+  background-color: #f8f9fa;
+  padding: 20px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.question-type {
+  background-color: #e9ecef;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+/* 中间面板样式 */
+.center-panel {
+  width: 40%;
+  flex: 1;
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.question-title {
+  white-space: nowrap;
+}
+
+.question-dropzone {
+  border: 1px dashed #ccc;
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  line-height: 580px;
+  margin-bottom: 20px;
+  overflow-x: hidden;
+  overflow: auto;
+}
+
+.question-dropzoned {
+  border: 1px dashed #ccc;
+  padding: 20px;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  overflow-x: hidden;
+  overflow: auto;
+}
+
+.drop-item {
+  position: relative;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background-color: pink;
+  border-radius: 15px;
+}
+
+.change-btn {
+  border: none;
+  background-color: #ebf0fe;
+  color: #3c70f6;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.create-btn {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.completion-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+select {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.publish-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* 右侧面板样式 */
+.right-panel {
+  width: 20%;
+  background-color: #f8f9fa;
+  padding: 10px;
+  /* height: 100%; */
+}
+
+.shortcut-setting {
+  margin-bottom: 20px;
+}
+
+.setting-item {
+  margin-bottom: 10px;
+}
+
+.sub-item {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.recycle-bin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.center-panel-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+/* 添加过渡效果 */
+.hidden-right-panel {
+  transition: right 0.3s ease;
+  right: -100%; /* 默认隐藏在右侧 */
+  position: absolute;
+  top: 0;
+  /* height: 100vh; */
+  width: 265px; 
+}
+
+.hidden-right-panel.show {
+  right: 0; /* 显示在右侧 */
+}

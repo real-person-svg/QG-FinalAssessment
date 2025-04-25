@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/workbench.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+  <title>问卷编辑界面</title>
+</head>
+
+<body>
+
+  <div class="left-panel">
+    <div class="back-box" onclick="goBackToMainPage()">
+      <i class="fa-solid fa-arrow-left"></i> 返回主页面
+    </div>
+    <div class="section">
+      <h3>选择</h3>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="单选">
+        <i class="fa-solid fa-circle"></i> 单选
+      </div>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="多选">
+        <i class="fa-solid fa-circle-half-stroke"></i> 多选
+      </div>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="下拉">
+        <i class="fa-solid fa-caret-down"></i> 下拉
+      </div>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="多级下拉">
+        <i class="fa-solid fa-caret-down"></i> 多级下拉
+      </div>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="图片选择">
+        <i class="fa-solid fa-image"></i> 图片选择
+      </div>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="矩阵选择">
+        <i class="fa-solid fa-table"></i> 矩阵选择
+      </div>
+    </div>
+    <div class="section">
+      <h3>填空</h3>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="填空">
+        <i class="fa-solid fa-square"></i> 填空
+      </div>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="多项填空">
+        <i class="fa-solid fa-shapes"></i> 多项填空
+      </div>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="横向填空">
+        <i class="fa-solid fa-bars"></i> 横向填空
+      </div>
+      <div class="question-type" draggable="true" ondragstart="dragStart(event)" data-type="矩阵填空">
+        <i class="fa-solid fa-table"></i> 矩阵填空
+      </div>
+    </div>
+  </div>
+
+  <div class="center-panel">
+    <div class="center-panel-top">
+      <h2 class="question-title" style="color: red;">问卷标题</h2>
+      <span class="click-recycle" style="visibility: visible;"><i class="fa-regular fa-trash-can"></i></span>
+    </div>
+    <div class="question-dropzone location" ondragover="dragOver(event)" ondrop="drop(event)">
+      <p><i class="fa-solid fa-arrows-up-down-left-right"></i>把题型拖入此区域</p>
+    </div>
+    <div class="completion-status">
+      <button class="publish-btn" onclick="submitQuestionnaire()">发布</button>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="shortcut-setting">
+      <h3>回收站</h3>
+      <div id="recycle-bin" class="recycle-bin"></div>
+    </div>
+  </div>
+
+  <script src="../JavaScript/workbench.js"></script>
+</body>
+
+</html>

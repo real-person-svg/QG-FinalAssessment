@@ -1,0 +1,129 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 顶部导航栏样式 */
+header {
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
+.back-box {
+  background-color: #eaecef;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+}
+
+.header-title {
+  font-size: 18px;
+}
+
+.header-free {
+  padding: 10px 20px;
+  background-color: #999;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* 选项卡导航样式 */
+.tab-nav {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.tab-nav a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.tab-nav a.active {
+  background-color: #e0e0e0;
+}
+
+.account-info {
+  margin: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.info-item {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-item label {
+  width: 100px;
+}
+
+.info-value {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.save-btn,
+.cancel-btn,
+.edit-btn,
+.change-btn,
+.set-btn,
+.expand-btn {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.info-textarea {
+  width: 100%;
+  padding: 10px;
+}
+
+.input-password {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #999;
+}
+
+.input-password:focus {
+  outline: none;
+}
+
+.input-password::placeholder {
+  font-size: 14px;
+}

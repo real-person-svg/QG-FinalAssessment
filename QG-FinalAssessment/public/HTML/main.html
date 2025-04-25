@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="register.html" id="register-link">注册</a></li>
+          <li><a href="login.html" id="login-link">登录</a></li>
+          <li><a href="user.html" id="user-link" style="display: none;">用户名</a></li>
+          <li><a href="#" id="logout-link" style="display: none;">退出登录</a></li>
+        </ul>
+      </nav>
+      <a href="workbench.html" class="btn-enter">进入工作台</a>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="title">热门问卷</h1>
+
+    <div class="carousel" id="hot-carousel">
+      <div class="carousel-inner" id="hot-carousel-inner">
+      </div>
+      <button class="carousel-control prev" onclick="prevSlide('hot-carousel-inner')">&lt;</button>
+      <button class="carousel-control next" onclick="nextSlide('hot-carousel-inner')">&gt;</button>
+    </div>
+
+
+    <h1 class="title">我的问卷</h1>
+    <div class="carousel" id="my-carousel">
+      <div class="carousel-inner" id="my-carousel-inner">
+      </div>
+      <button class="carousel-control prev" onclick="prevSlide('my-carousel-inner')">&lt;</button>
+      <button class="carousel-control next" onclick="nextSlide('my-carousel-inner')">&gt;</button>
+    </div>
+    <div id="form-container"></div>
+  </main>
+
+  <script src="../JavaScript/script.js"></script>
+</body>
+
+</html>

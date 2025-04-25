@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../CSS/user.css">
+  <title>个人中心</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="back-box" onclick="goBackToMainPage()">
+        <i class="fa-solid fa-arrow-left"></i> 返回主页面
+      </div>
+      <span class="header-title">个人中心</span>
+      <span class="header-free">免费版</span>
+    </div>
+  </header>
+
+  <nav class="tab-nav">
+    <a href="#" class="active">账号信息</a>
+  </nav>
+
+  <main class="account-info">
+    <div class="info-item">
+      <label>用户名</label>
+      <span class="info-value" id="user-info"></span>
+    </div>
+    <div class="info-item">
+      <label>密码</label>
+      <span class="info-value" id="password-info"></span>
+      <a href="#" class="set-btn" id='change-password' onclick="showPasswordInputs()">更改</a>
+      <a href="#" style="display: none;" class="set-btn" id="confirm-change-password" onclick="changePassword()">确认修改</a>
+      <a href="#" style="display: none;" class="set-btn" id="cancel-change-password-btn" onclick="cancelChangePassword()">取消</a>
+    </div>
+    <input type="password" placeholder="请输入原密码" id="old-password" style="display: none;" class="input-password">
+    <input type="password" placeholder="请输入新密码" id="new-password" style="display: none;" class="input-password">
+    <div class="info-item">
+      <label>简介</label>
+      <span class="info-value" id="profile-info"></span>
+      <a href="#" class="edit-btn" onclick="editProfile()">编辑</a>
+      <div class="operation-section">
+        <a href="#" class="save-btn" style="display: none;" onclick="saveProfile()">保存</a>
+        <a href="#" class="cancel-btn" style="display: none;" onclick="cancelEdit()">取消</a>
+      </div>
+    </div>
+    <textarea id="profile-textarea" style="display: none;" class="info-textarea"></textarea>
+  </main>
+
+  <script src="../JavaScript/user.js"></script>
+</body>
+
+</html>
