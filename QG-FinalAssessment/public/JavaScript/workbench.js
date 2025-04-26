@@ -248,15 +248,10 @@ function restoreQuestion(questionElement) {
     });
     questionElement.appendChild(deleteButton);
 
-    // 将题目从回收站移除
+    // 将题目从回收站移除,添加到工作区
     recycleBin.removeChild(questionElement);
-
-    // 将题目插入到原位置
-    if (originalIndex < Array.from(dropzone.children).length) {
-      dropzone.insertBefore(questionElement, dropzone.children[originalIndex]);
-    } else {
-      dropzone.appendChild(questionElement);
-    }
+    dropzone.appendChild(questionElement);
+    
 
     // 添加调整宽、高和圆角的操作手柄
     const handles = [
@@ -281,6 +276,7 @@ function restoreQuestion(questionElement) {
     questionElement.style.borderRadius = '15px';
     questionElement.style.opacity = '1';
 
+    // 将题目插入到原位置
     sortDropItems();
   }, { once: true });
 }
@@ -367,6 +363,7 @@ function submitQuestionnaire() {
   const dropzone = document.querySelector('.location');
   const questions = [];
 
+  // 收集题型数据
   dropzone.querySelectorAll('.drop-item').forEach((question) => {
     const rect = question.getBoundingClientRect();
     let content = question.textContent.replace('删除', '');
@@ -443,6 +440,7 @@ function getCookie(name) {
 
 // 拖动 drop-item 开始事件处理函数
 function dragItemStart(event) {
+  // 编辑时删除多余的文字
   const textContent = event.target.textContent.replace('这是一道', '');
   const realtextContent = textContent.replace('题删除', '');
   event.dataTransfer.setData("text", realtextContent);
