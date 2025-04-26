@@ -25,8 +25,13 @@ form.addEventListener('submit', function (event) {
       return response.json();
     })
     .then(data => {
-      console.log('注册成功:', data);
-      alert('注册成功:' + data);
+      if(data.success){
+        console.log('注册成功:', data.message);
+        alert('注册成功:' + data.message);
+      }else{
+        console.log('注册失败:', data.message);
+        alert('注册失败:' + data.message);
+      }
     })
     .catch(error => {
       console.error('注册失败:', error.message);

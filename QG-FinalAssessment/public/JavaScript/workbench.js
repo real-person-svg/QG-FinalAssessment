@@ -127,7 +127,7 @@ window.addEventListener('load', async () => {
           p.textContent = question.content;
 
           // 设置宽高和圆角
-          p.style.width = (question.width / 10)+ '%';
+          p.style.width = (question.width / 7.83)+ '%';
           p.style.height = question.height + 'px';
           p.style.borderRadius = question.borderRadius;
 
@@ -400,6 +400,7 @@ function submitQuestionnaire() {
   if (isUpdate === 'true') {
     url = 'http://localhost:3000/updateQuestionnaire';
     questionnaireData = {
+      username, 
       user_id,
       questionnaires_count,
       questions
@@ -420,12 +421,17 @@ function submitQuestionnaire() {
       return response.json();
     })
     .then(data => {
-      console.log('问卷提交成功:', data.message);
-      alert('问卷提交成功');
+      if(data.success){
+        console.log('问卷提交成功:');
+        alert('问卷提交成功');
+      }else{
+        console.log('问卷提交失败:', data.message);
+        alert('问卷提交失败: ' + data.message);
+      }
     })
     .catch(error => {
       console.error('问卷提交失败:', error.message);
-      alert('问卷提交失败');
+      alert('问卷提交失败: ' + error.message);
     });
 }
 
